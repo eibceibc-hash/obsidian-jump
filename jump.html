@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>跳转中...</title>
+</head>
+<body>
+<script>
+var params = new URLSearchParams(location.search);
+var v = params.get("v");
+var f = params.get("f");
+if(v && f){location.href="obsidian://open?vault="+encodeURIComponent(v)+"&file="+encodeURIComponent(f);}else{document.write("参数错误");}
+</script>
+</body>
+</html>
