@@ -7,14 +7,10 @@
 </head>
 <body>
 <script>
-const p=new URLSearchParams(location.search);
-const v=p.get("v")||"";
-const f=p.get("f")||"";
-if(v&&f){
- location.href="obsidian://open?vault="+encodeURIComponent(v)+"&file="+encodeURIComponent(f);
-}else{
- document.write("参数错误");
-}
+var v=new URLSearchParams(location.search).get("v")||"";
+var f=new URLSearchParams(location.search).get("f")||"";
+if(v&&f){location.href="obsidian://open?vault="+encodeURIComponent(v)+"&file="+encodeURIComponent(f);}
 </script>
+<noscript><p>请复制以下链接到浏览器打开：<br><a id="link"></a></p><script>document.getElementById("link").innerText=location.href;</script></noscript>
 </body>
 </html>
