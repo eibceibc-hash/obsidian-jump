@@ -8,14 +8,9 @@
 <body>
 <script>
 var params = new URLSearchParams(location.search);
-var v = params.get("v") || "";
-var f = params.get("f") || "";
-if (!v || !f) {
-  params = new URLSearchParams(location.hash.substring(1));
-  v = params.get("v") || "";
-  f = params.get("f") || "";
-}
-if(v&&f){location.href="obsidian://open?vault="+encodeURIComponent(v)+"&file="+encodeURIComponent(f);}else{document.write("参数错误");}
+var v = params.get("v");
+var f = params.get("f");
+if(v && f){location.href="obsidian://open?vault="+encodeURIComponent(v)+"&file="+encodeURIComponent(f);}else{document.write("参数错误 v="+v+" f="+f);}
 </script>
 </body>
 </html>
